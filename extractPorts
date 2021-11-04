@@ -1,5 +1,5 @@
 #!/usr/bin/perl -wn
-#Author: sponge369
+#Author: spoNge369
 use strict;
 use Clipboard;
 use Term::ANSIColor;

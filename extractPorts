@@ -38,6 +38,7 @@ elsif ( /\d{1,5}\/open/ ) {
 	print color('yellow'); print "\t[] Open ports: "; print color('reset');
 	print @ports;
 	my $copy_ports = join ",", @ports;
+
 	Clipboard->copy_to_all_selections( $copy_ports );
 	Clipboard->paste() and print color('cyan'); print "\n\n[] Copied OPEN-Ports to Clipboard.\n\n";
 

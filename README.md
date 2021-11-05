@@ -1,6 +1,6 @@
 
 # Use
-```extractPort allPorts```
+```extractPorts allPorts```
 
 allPort: Format text grepeabe(nmap -oG)
 

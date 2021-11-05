@@ -7,22 +7,23 @@ use Term::ANSIColor;
 
 
 BEGIN {
+
 	@ARGV == 1 or warn "Usage: extractPorts file_grepeable\n\n" and exit 1;
 	print `clear`;
 	@ARGV = grep {-T}@ARGV;
 	print color('red'); print "\nThe argument must exist and be ASCII TEXT\n\n" and exit 2 unless @ARGV == 1;
 	
 	print color('cyan'); print "\n[] Extracting information...\n\n";
+
 }
 
 chomp;
 
 if ( /^Host:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s+\(\)\s+Status/ ) {
 
-	my @ip = /^Host:\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+\(\)\s+Status/;
-	
-	print color('yellow'); print "\t[] Ip target: "; print color('reset');
+	my @ip = /^Host:\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+\(\)\s+Status/;	
 
+	print color('yellow'); print "\t[] Ip target: "; print color('reset');
 	print @ip , "\n\n";
 
 }
@@ -35,11 +36,10 @@ elsif ( /\d{1,5}\/open/ ) {
 	            } /(\d{1,5})\/open/gi;
 		
 	print color('yellow'); print "\t[] Open ports: "; print color('reset');
-
 	print @ports;
-
 	my $copy_ports = join ",", @ports;
 	Clipboard->copy_to_all_selections( $copy_ports );
 	Clipboard->paste() and print color('cyan'); print "\n\n[] Copied OPEN-Ports to Clipboard.\n\n";
+
 }
 

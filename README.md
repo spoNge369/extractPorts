@@ -1,6 +1,6 @@
 
-# Use
-`extractPorts allPorts`
+# Use in terminal
+`$ extractPorts allPorts`
 
 allPort: Grepable file format (nmap -oG)
 

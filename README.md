@@ -1,12 +1,12 @@
 
 # Use
-```extractPorts allPorts```
+`extractPorts allPorts`
 
-allPort: Format text grepeabe(nmap -oG)
+allPort: Grepable file format (nmap -oG)
 
 
 # Install Dependencies
 
-1) `sudo perl -M'CPAN' -E'install Clipboard'`
+1) `sudo perl -MCPAN -e'install Clipboard'`
 
 2) Hack Nerd Font

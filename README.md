@@ -1,3 +1,10 @@
-Install dependencies/module:
-======
-```sudo perl -M'CPAN' -e'install Clipboard'```
+
+# Use
+`extractPort allPorts`
+
+allPort: Format text grepeabe(nmap -oG)
+
+
+# Install Dependencies
+
+`sudo perl -M'CPAN' -E'install Clipboard'`

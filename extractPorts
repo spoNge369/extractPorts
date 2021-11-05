@@ -7,7 +7,7 @@ use Term::ANSIColor;
 
 BEGIN {
 
-	@ARGV==1 or warn "Usage: extractPort file_grepeable\n\n" and exit 1;
+	@ARGV==1 or warn "Usage: extractPorts file_grepeable\n\n" and exit 1;
 	print `clear`;
 	@ARGV=grep{-T}@ARGV;
 	print color('red');print "\nThe argument must exist and be ASCII TEXT\n\n" and exit 2 unless @ARGV==1;

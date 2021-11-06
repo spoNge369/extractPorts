@@ -14,7 +14,6 @@ BEGIN {
 	print color('red'); print "\nThe argument must exist and be ASCII TEXT\n\n" and exit 2 unless @ARGV == 1;
 	
 	print color('cyan'); print "\n[] Extracting information...\n\n";
-
 }
 
 chomp;
@@ -25,6 +24,7 @@ if ( /^Host:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s+\(\)\s+Status/ ) {
 
 	print color('yellow'); print "\t[] Ip target: "; print color('reset');
 	print @ip , "\n\n";
+	
 
 }
 
@@ -38,9 +38,13 @@ elsif ( /\d{1,5}\/open/ ) {
 	print color('yellow'); print "\t[] Open ports: "; print color('reset');
 	print @ports;
 	my $copy_ports = join ",", @ports;
+	my @copy_target = /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/;
+	
+	my $copy = $copy_ports . " " . $copy_target[0];
 
-	Clipboard->copy_to_all_selections( $copy_ports );
-	Clipboard->paste() and print color('cyan'); print "\n\n[] Copied OPEN-Ports to Clipboard.\n\n";
+
+	Clipboard->copy_to_all_selections( $copy );
+	Clipboard->paste() and print color('cyan'); print "\n\n[] Copied OPEN ports and Ip target to Clipboard.\n\n";
 
 }
 

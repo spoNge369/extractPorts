@@ -10,3 +10,5 @@ allPort: Grepable file format (nmap -oG)
 1) `sudo perl -MCPAN -e'install Clipboard'`
 
 2) Hack Nerd Font
+
+3) `sudo apt install make`

@@ -48,3 +48,5 @@ elsif ( /\d{1,5}\/open/ ) {
 
 }
 
+END { system "pkill xclip" }
+

@@ -47,6 +47,3 @@ elsif ( /\d{1,5}\/open/ ) {
 	Clipboard->paste() and print color('cyan'); print "\n\n[] Copied OPEN ports and Ip target to Clipboard.\n\n";
 
 }
-
-END { system "pkill xclip" }
-

@@ -11,4 +11,4 @@ allPort: Grepable file format (nmap -oG)
 
 2) Hack Nerd Font
 
-3) `sudo apt install make`
+3) `sudo apt install make xclip gcc`
